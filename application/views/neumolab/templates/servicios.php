@@ -1,13 +1,13 @@
 <section class="container-fluid">
 	<div class="row">
-		<div id="carousel-somos" class="carousel slide carousel-completo" data-ride="carousel">
+		<div id="carousel-servicios" class="carousel slide carousel-completo" data-ride="carousel">
 			<?php /*
 
 			<!-- Indicators -->
 			<ol class="carousel-indicators">
-				<li data-target="#carousel-somos" data-slide-to="0" class="active"></li>
-				<li data-target="#carousel-somos" data-slide-to="1"></li>
-				<li data-target="#carousel-somos" data-slide-to="2"></li>
+				<li data-target="#carousel-servicios" data-slide-to="0" class="active"></li>
+				<li data-target="#carousel-servicios" data-slide-to="1"></li>
+				<li data-target="#carousel-servicios" data-slide-to="2"></li>
 			</ol>
 
 			*/ ?>
@@ -23,11 +23,11 @@
 			<?php /*
 
 			<!-- Controls -->
-			<a class="left carousel-control" href="#carousel-somos" role="button" data-slide="prev">
+			<a class="left carousel-control" href="#carousel-servicios" role="button" data-slide="prev">
 				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
 				<span class="sr-only">Previous</span>
 			</a>
-			<a class="right carousel-control" href="#carousel-somos" role="button" data-slide="next">
+			<a class="right carousel-control" href="#carousel-servicios" role="button" data-slide="next">
 				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 				<span class="sr-only">Next</span>
 			</a>
