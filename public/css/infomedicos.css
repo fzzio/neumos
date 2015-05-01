@@ -1,0 +1,100 @@
+.infomedicos ul{
+    padding-left: 0px;
+}
+
+.infomedicos li{
+    list-style-type: none;
+    padding: 15px;
+}
+
+.div_naranja{
+    padding-top: 57px !important;
+    padding-bottom: 57px !important;
+}
+
+.div_naranja{
+    background-color: #e8b576;
+    text-align: center;
+    color: white;
+    font-family: 'Poiret One';
+    font-weight: bolder;
+}
+
+.div_infomedicos{
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+}
+
+.div_infomedicos h2, .convenios h3, .guias h3{
+    color: #e8b576;
+    font-family: 'Poiret One';
+    text-align: center;
+    padding-bottom: 20px;
+    font-weight: bold;
+}
+.div_infomedicos p, .guias p{
+    font-weight: 500;
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: #1b83a6;
+}
+
+.convenios{
+    padding-bottom: 20px;
+}
+
+.convenios li{
+    color: white;
+    font-family: 'Poiret One';
+    padding: 7px;
+}
+
+.guias, .lineas{
+    padding-bottom: 20px;
+}
+.guias li{
+    color: #1b83a6;
+    font-family: 'Poiret One';
+    padding: 3px;
+}
+
+.casos{
+    padding-bottom: 20px;
+}
+
+.casos h3{
+    text-align: center;
+}
+
+.casos p, .lineas p{
+    font-family: 'Poiret One';
+    color: white;
+}
+
+.lineas h3{
+    text-align: center;
+    padding: 20px;
+}
+.lineas ul{
+    padding-left: 15px;
+}
+.lineas li{
+    color: white;
+    font-family: 'Poiret One';
+    padding: 2px;
+}
+.negrita{
+    font-weight: bold;
+}
+
+.info-1{
+    background: url("../images/infomedicos1.png") no-repeat center center fixed; /* fixed not scroll*/
+    color:#fff;
+    background-size:cover;
+    margin-top: 120px;
+}
+.info-2{
+    background: url("../images/infopacientes1.png") no-repeat center center fixed; /* fixed not scroll*/
+    color:#fff;
+    background-size:cover;
+    margin-top: 120px;
+}

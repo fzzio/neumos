@@ -1,0 +1,232 @@
+.divider {
+    height:50px;
+}
+
+.verde{
+    background-color: #1b83a6;
+    border-bottom: 0px;
+}
+
+.blanco{
+    background-color: #FFFFFF;
+}
+.todoblanco{
+    width: 100%;
+}
+.amarillo{
+    background-color: #f4ae4f;
+    width: 100%;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+.letra-menup{
+    margin-top: 20px;
+    font-family: 'Poiret One';
+    font-size: 14px;
+    font-weight: bold;
+}
+.letra-menup li a{
+    color: #1b83a6!important;
+}
+.letra-menup li {
+    padding-right: 70px;
+}
+.letra-menup li a:hover{
+    color: #f3ad4e!important; /*naranja*/
+}
+.menu2 a{
+    /*en el menu 2 y en el pie columna central*/
+    font-family: 'Poiret One';
+    font-size: 14px;
+    color: white;
+    font-weight: bolder;
+    
+}
+.menu2 a:hover{
+    text-decoration:none;
+}
+.menu2-alto{
+    height: 35px;
+    margin-top: 20px;
+    
+}
+.menu1 ul li a{
+    color: #e8b576!important; /*naranja obscuro*/
+    font-family: 'Poiret One';
+    font-size: 14px;
+    font-weight: bold;
+}
+.menu1 ul li a img, .delfooter li a img{
+    height: 28px!important;
+    width: 33px!important;
+    padding-top: 0px!important;
+    padding-bottom: 0px!important;
+
+}
+.menu1{
+    background-color: #f9f9f9;
+
+}
+
+@media screen and (max-width: 768px) {
+    .menu1 {
+        display: none;
+    }
+    .menu2 {
+        display: none;
+    }
+    .ancho-menup{
+        height: 85px;
+    }
+}
+
+.social{
+    padding: 10px 5px!important;
+    font-size: 20px!important;
+}
+.alinear{
+    margin-right: 35px;
+}
+section {
+    height:400px;
+    padding-top:50px;
+    padding-bottom:50px;
+    overflow:auto;
+}
+
+img{
+    height:400px; /*350*/
+    padding-top:50px;
+    padding-bottom:50px;
+
+}
+h1{
+    font-family: 'Poiret One',bolder;
+    color: #f6bd52;/*naranja claro*/
+    font-weight:900;
+    margin-top: 55px;
+    padding-bottom: 20px;    
+}
+h5, h3{
+    font-family: 'Poiret One',bolder;
+    color: #FFFFFF;
+    font-weight:900;    
+    padding-bottom: 10px; 
+    
+}
+h4{
+    color: #f6bd52;/*naranja claro*/
+    font-weight: 400;
+}
+.textoAmp,.textoNS,.textoUN,.textoBg3,.textoBg3b, .textoAC, .texto-na{
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 16px;
+}
+
+.textoBg3{
+    margin-top: 30px;
+    width: 350px;
+    margin-left: 100px;
+}
+.textoBg3b, .textoAC{
+    margin-top: 30px;
+    width: 350px;
+    margin-right: 100px;
+}
+.textoAmp{        
+        width: 750px;
+        padding-left: 10px;
+        color: #FFFFFF;
+}
+.textoNS{
+        color: #FFFFFF;
+}
+.textoUN{
+        color: #1b83a6;
+        font-weight:400 ;
+        width: 320px;
+}
+.tituloUN{
+    margin-left:50px; padding-left: 50px; padding-top:50px;
+}
+.tituloAC{
+    margin-right:250px;  
+
+}
+.textoAC{
+    color: #1b83a6;
+    font-weight:400 ;
+}
+.textoSus h3{
+    margin-top: 1px;
+    padding-bottom:0px !important;
+}
+.textoSus a{
+    margin-top: 1px;   
+    font-family: 'Poiret One',bolder;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.imgUN{
+    padding-left: 50px; width:600px; height:auto;
+}
+.logo{
+    height:70px;
+    width: auto;
+    margin-top: -10px;
+    padding-top:0px;
+    padding-bottom:0px;
+    margin-left: 110px;
+    
+}
+/*.bg-1 {
+	background: url("../images/home1.png") no-repeat center center fixed;  fixed not scroll
+    color:#fff;
+    background-size:cover;
+    margin-top: 120px;
+}*/
+
+.slide_neumos{
+    width: 100%;
+    margin-top: 120px;
+    height: 400px;
+}
+
+.bg-2 {
+	background: url("../images/home2.png") no-repeat top center fixed;
+    color:#fff;
+    background-size:cover;
+}
+
+.bg-3 {
+	background: url("../images/home3.png") no-repeat bottom center fixed;
+    color:#fff;
+    background-size:cover;
+    height: 300px;
+}
+
+#footer {
+    height: 200px;
+    background-color:#1b83a6;
+    margin-top:0px;/*50px*/
+    padding-top:20px;/*20px*/
+    padding-bottom:20px;  
+}
+
+#footer a {
+    font-family: 'Poiret One',bold;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.delfooter li{
+    list-style-type: none;
+}
+.masAbajo{
+    margin-top: 50px;
+}
+.centro{
+    font-weight: bolder;
+}
+.centro li{
+    padding-bottom: 10px;
+}

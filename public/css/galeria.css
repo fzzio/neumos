@@ -1,0 +1,78 @@
+.ser-1{
+	background: url("../images/servicios1.png") no-repeat center center fixed; /* fixed not scroll*/
+	color:#fff;
+	background-size:cover;
+	margin-top: 120px;
+}
+
+
+#owl-demo .item{
+  background: #3fbf79;
+  padding: 30px 0px;
+  margin: 10px;
+  color: #FFF;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  text-align: center;
+}
+.customNavigation{
+  text-align: center;
+}
+
+.customNavigation a{
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/*.contenedor{
+	height:500px;
+	width: 100%;
+	min-height: 300px;
+	position: relative;
+
+	} 
+
+#wrapper, #prev, #next {
+	height: 150px; /*height 170px segun la altura de la imagen*//*
+	position: absolute;
+	top: 50%;
+	margin-top: 50px; /*-85px*//*
+}
+#wrapper {
+	width: 97%; /*Aqui era 90%*/
+	/*left: 5%;*//*
+	overflow: hidden;
+
+}
+
+#carousel a {
+	margin: 0px 0px; /*margin 10px 10px*//*
+	border: none;
+	display: block;
+	float: left;
+	height: auto!important;
+	padding-top: 0!important;
+	padding-bottom: 0!important;
+}
+
+#prev, #next {
+	background: #1b83a6 center center no-repeat;
+	width: 5%;
+	opacity: 0.5;
+}
+#prev:hover, #next:hover {
+	background-color: #bbb;
+}
+#prev {
+	background-image: url( "../images/galeria1/gui-prev.png" );
+	left: 0;
+}
+#next {
+	background-image: url( "../images/galeria1/gui-next.png" );
+	right: 0;
+}*/

@@ -1,0 +1,52 @@
+.naranja{
+	background-color: #f3ad4e!important; /*naranja*/
+	color:white;
+	font-family: 'Poiret One';
+	font-size: 24px;
+	font-weight: bolder;
+	margin-top: 200px;
+	height: 100px;
+	padding-top: 25px;
+}
+.imagen1{
+	
+	height: 350px;
+	width: 800px;
+	padding-top: 30px;
+}
+.container-an{
+	width: 100%;
+}
+.parrafo{
+	width: 800px;
+	padding-left: 10px;
+	
+}
+.parrafo, .lista li a {
+	font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 16px;
+    color: #1b83a6;
+}
+.imagen2{
+	padding-left: 70px;
+	height: 450px;
+}
+.imagen3{
+	padding-right: 70px;
+	height: 450px;
+}
+.lista{
+	list-style-image: url('../images/dot.png');
+	padding-bottom: 30px;
+}
+.lista li  {
+	margin-bottom: 8px;
+	
+}
+.lista li a {
+	cursor:none;
+	text-decoration: none;
+}
+.lista li a:hover{
+    color:#1b83a6;
+}

@@ -1,0 +1,52 @@
+
+.co-1 {
+	background: url("../images/contactenos1.png") no-repeat center center fixed; /* fixed not scroll*/
+    color:#fff;
+    background-size:cover;
+    margin-top: 120px;
+}
+
+/*.co-2 {
+	background: no-repeat top center fixed;
+    color:#fff;
+    background-size:cover;
+
+}*/
+.formulario{
+    height:450px;
+    width:100%;
+    margin-top: -90px;
+}
+.formularioP{
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 16px;
+    width: 750px;
+    padding-left: 10px;
+    color: #1b83a6;
+
+}
+.formulario-op{
+    width: 95%;
+}
+.formulario-op input, .formulario-op textarea{
+    border: 2px solid #f3ad4e;
+    margin-left: 20px;
+}
+.formulario-op p{
+    font-family: 'Poiret One';
+    font-size: 14px;
+    color: #1b83a6;
+    font-weight: 900;
+}
+#templatemo_contact_map{
+    width: 100%;
+    height: 300px;
+    
+}
+.mapa{
+    width: 100%!important;
+    padding:0px;
+}
+.botonC{
+    padding-top: 15px;
+}
