@@ -17,8 +17,7 @@ class Admin extends CI_Controller {
     ///http://getbootstrap.com/2.3.2/base-css.html#icons
     public function getMenu() {
         $menu = array();
-        array_push($menu, array("url" => "admin/inicioSlider", "label" => "Inicio slider", "icon" => "icon-home"));
-        array_push($menu, array("url" => "admin/inicioAccesos", "label" => "Inicio accesos", "icon" => "icon-home"));
+        array_push($menu, array("url" => "admin/inicioProveedor", "label" => "Inicio slider"));
         return $menu;
     }
 
@@ -26,7 +25,7 @@ class Admin extends CI_Controller {
 
     public function getMenuAdmin() {
         $menu = array();
-        array_push($menu, array("url" => "admin/usuario", "label" => "Usuarios", "icon" => "icon-user"));
+        array_push($menu, array("url" => "admin/usuario", "label" => "Usuarios"));
         return $menu;
     }
 
