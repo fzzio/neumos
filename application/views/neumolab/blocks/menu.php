@@ -16,13 +16,13 @@
 			<div class="collapse navbar-collapse" id="navbar-superior">
 				<ul class="nav navbar-nav navbar-right">
 					<li>
-						<a href="<?php echo base_url('index.php/site/quienesSomos'); ?>">Quiénes Somos</a>
+						<?php echo anchor('site/quienesSomos', 'Quiénes Somos'); ?>
 					</li>
 					<li>
-						<a href="<?php echo base_url('index.php/site/infoPacientes'); ?>">Información Pacientes</a>
+						<?php echo anchor('site/infoPacientes', 'Información Pacientes'); ?>
 					</li>
 					<li>
-						<a href="<?php echo base_url('index.php/site/infoMedicos'); ?>">Información Médicos</a>
+						<?php echo anchor('site/infoMedicos', 'Información Médicos'); ?>
 					</li>
 					<li>
 						<a href="#">Ingresar</a>
@@ -77,19 +77,19 @@
 			<div class="collapse navbar-collapse" id="navbar-secciones">
 				<ul class="nav navbar-nav  navbar-right">
 					<li>
-						<a href="<?php echo base_url('index.php/site/index'); ?>">Inicio</a>
+						<?php echo anchor('site/index', 'Inicio'); ?>
 					</li>
 					<li>
-						<a href="<?php echo base_url('index.php/site/servicios'); ?>">Servicios</a>
+						<?php echo anchor('site/servicios', 'Servicios'); ?>
 					</li>
 					<li>
-						<a href="<?php echo base_url('index.php/site/galeria'); ?>">Galeria</a>
+						<?php echo anchor('site/galeria', 'Galeria'); ?>
 					</li>
 					<li>
-						<a href="<?php echo base_url('index.php/site/noticias'); ?>">Noticias</a>
+						<?php echo anchor('site/noticias', 'Noticias'); ?>
 					</li>
 					<li>
-						<a href="<?php echo base_url('index.php/site/contacto'); ?>">Contáctenos</a>
+						<?php echo anchor('site/contacto', 'Contáctenos'); ?>
 					</li>
 				</ul>
 			</div>
@@ -112,19 +112,19 @@
 			<div class="collapse navbar-collapse" id="navbar-inferior">
 				<ul class="nav navbar-nav">
 					<li>
-						<a href="<?php echo base_url('index.php/site/consultas'); ?>">Consultas</a>
+						<?php echo anchor('site/consultas', 'Consultas'); ?>
 					</li>
 					<li>
-						<a href="<?php echo base_url('index.php/site/pulmonar'); ?>">Pruebas de Función Pulmonar</a>
+						<?php echo anchor('site/pulmonar', 'Pruebas de Función Pulmonar'); ?>
 					</li>
 					<li>
-						<a href="<?php echo base_url('index.php/site/suenio'); ?>">Estudios de Sueño</a>
+						<?php echo anchor('site/suenio', 'Estudios de Sueño'); ?>
 					</li>
 					<li>
-						<a href="<?php echo base_url('index.php/site/respiratorio'); ?>">Terapia y Cuidado Respiratorio</a>
+						<?php echo anchor('site/respiratorio', 'Terapia y Cuidado Respiratorio'); ?>
 					</li>
 					<li>
-						<a href="<?php echo base_url('index.php/site/especiales'); ?>">Programas Especiales</a>
+						<?php echo anchor('site/especiales', 'Programas Especiales'); ?>
 					</li>
 				</ul>
 			</div>

@@ -53,6 +53,17 @@
 		<div class="col-md-2">&nbsp;</div>
 		<div class="col-md-8 col-sm-8 text-center">
 			<div class="container-fluid">
+
+				<?php /*echo form_open("user/registrarLocal", array('id' => 'msform', 'class' => 'panel-login', 'role' => 'form'));*/ ?>
+							
+						<?php /*
+					      		<input type="submit" name="submit" class="submit btn btn-wbx" value="Registar" />
+						*/ ?>  	
+							
+				<?php /*echo form_close();*/ ?>
+        				
+
+
 				<form class="row">
 
 					<div class="col-sm-6">
