@@ -15,6 +15,9 @@ body{
 .fondo-amarillo{
 	background-color: #f4ae4f;
 }
+.fondo-naranja-claro{
+	background-color: #e8b576;
+}
 
 .img-icono-top{
 	width: auto;
@@ -124,6 +127,34 @@ body{
 	height: 300px;
 }
 
+.sin-lista{
+	list-style: none;
+	padding: 0px;
+	font-size: 20px;
+	font-weight: bold;
+}
+.sin-lista > li{
+	opacity: 0.8;
+}
+.sin-lista > li:hover,
+.sin-lista > li:active,
+.sin-lista > li:focus{
+	opacity: 1;	
+}
+.sin-lista > li > a{
+	line-height: 30px;
+	display: inline-block;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.link,
+.link:hover,
+.link:active,
+.link:focus{
+	text-decoration: none;
+}
+
 .lista-social{
 	list-style: none;
 }
@@ -185,6 +216,9 @@ body{
 .obj-centrar{
 	position: relative;
 	margin: 0 auto;
+}
+.txt-bold{
+	font-weight: bold;
 }
 
 #seccion-servicios{

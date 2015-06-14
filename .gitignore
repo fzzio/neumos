@@ -90,7 +90,6 @@ Icon
 .Spotlight-V100
 .Trashes
 
-otros/*
 
 # -- Code Igniter ------------------------------
 user_guide/*
@@ -101,3 +100,8 @@ otros-neumos/*
 */cache/*
 !*/cache/index.html
 !*/cache/.htaccess
+
+
+# -- Otros ------------------------------
+otros/*
+otros-neumos/*
