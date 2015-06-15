@@ -38,20 +38,20 @@
 
 <section class="container-fluid fondo-blanco">
 	<div class="row espaciado-3 fondo-blanco">
+		<?php  ?>
 		<div class="col-md-2">&nbsp;</div>
 		<div class="col-md-5 text-center">
-			<br />
-			
-			<img src="<?php echo base_url('public/images/home4.png'); ?>" title="" alt="" class="img-responsive obj-centrar" />
-			
+			<br />			
+			<?php $rutaImgInstitucion = 'assets/neumos/quienessomos/' . $institucion->imagen ; ?>
+			<img src="<?php echo base_url($rutaImgInstitucion); ?>" title="" alt="<?php echo $institucion->nombre; ?>" class="img-responsive obj-centrar" />
 			<br />
 		</div>
 		<div class="col-md-3 text-center">
-			<h3 class="text-center txt-naranja">
-				<strong>LA INSTITUCIÓN</strong>
+			<h3 class="text-center txt-naranja txt-bold txt-mayus">
+				<?php echo $institucion->nombre; ?>
 			</h3>
 			<p class="text-justify parrafo-acceso-2 txt-azul-marino">
-				Proin eu ante commodo, scelerisque est vel, ullamcorper nunc. Sed euismod cursus porttitor. Donec quis risus fringilla, vehicula felis id, facilisis neque. Nam fringilla at erat vitae pellentesque. Donec malesuada orci sed justo placerat hendrerit. Ut porttitor ipsum nunc, et tempor augue maximus quis. Quisque ultricies dictum semper.
+				<?php echo $institucion->descripcion; ?>
 			</p>
 		</div>
 		<div class="col-md-2">&nbsp;</div>
@@ -60,12 +60,13 @@
 
 
 <section class="container-fluid fondo-parallax" id="seccion-info">
+
 	<div class="row espaciado-3 fondo-azul-marino">
-		<h1 class="text-center titulo-acceso txt-naranja">Misión</h1>
+		<h1 class="text-center titulo-acceso txt-naranja"><?php echo $mision->nombre; ?></h1>
 		<div class="col-md-2">&nbsp;</div>
 		<div class="col-md-8 col-sm-8 text-center">
 			<p class="text-center txt-blanco parrafo-acceso">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent feugiat quam in lobortis auctor. Pellentesque sodales molestie tortor, a porta nunc iaculis in. Donec id vestibulum justo. Proin eu ante commodo, scelerisque est vel, ullamcorper nunc. Sed euismod cursus porttitor. Donec quis risus fringilla, vehicula felis id, facilisis neque. Nam fringilla at erat vitae pellentesque. Donec malesuada orci sed justo placerat hendrerit. Ut porttitor ipsum nunc, et tempor augue maximus quis. Quisque ultricies dictum semper.
+				<?php echo $mision->descripcion; ?>
 			</p>
 		</div>
 		<div class="col-md-2">&nbsp;</div>
@@ -76,11 +77,11 @@
 	</div>
 
 	<div class="row espaciado-3 fondo-amarillo">
-		<h1 class="text-center titulo-acceso txt-azul-marino">Visión</h1>
+		<h1 class="text-center titulo-acceso txt-azul-marino"><?php echo $vision->nombre; ?></h1>
 		<div class="col-md-2">&nbsp;</div>
 		<div class="col-md-8 col-sm-8 text-center">
 			<p class="text-center txt-blanco parrafo-acceso">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent feugiat quam in lobortis auctor. Pellentesque sodales molestie tortor, a porta nunc iaculis in. Donec id vestibulum justo. Proin eu ante commodo, scelerisque est vel, ullamcorper nunc. Sed euismod cursus porttitor. Donec quis risus fringilla, vehicula felis id, facilisis neque. Nam fringilla at erat vitae pellentesque. Donec malesuada orci sed justo placerat hendrerit. Ut porttitor ipsum nunc, et tempor augue maximus quis. Quisque ultricies dictum semper.
+				<?php echo $vision->descripcion; ?>
 			</p>
 		</div>
 		<div class="col-md-2">&nbsp;</div>
@@ -91,11 +92,11 @@
 	</div>
 
 	<div class="row espaciado-3 fondo-azul-marino">
-		<h1 class="text-center titulo-acceso txt-naranja">Valores</h1>
+		<h1 class="text-center titulo-acceso txt-naranja"><?php echo $valores->nombre; ?></h1>
 		<div class="col-md-2">&nbsp;</div>
 		<div class="col-md-8 col-sm-8 text-center">
 			<p class="text-center txt-blanco parrafo-acceso">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent feugiat quam in lobortis auctor. Pellentesque sodales molestie tortor, a porta nunc iaculis in. Donec id vestibulum justo. Proin eu ante commodo, scelerisque est vel, ullamcorper nunc. Sed euismod cursus porttitor. Donec quis risus fringilla, vehicula felis id, facilisis neque. Nam fringilla at erat vitae pellentesque. Donec malesuada orci sed justo placerat hendrerit. Ut porttitor ipsum nunc, et tempor augue maximus quis. Quisque ultricies dictum semper.
+				<?php echo $valores->descripcion; ?>
 			</p>
 		</div>
 		<div class="col-md-2">&nbsp;</div>

@@ -17,7 +17,10 @@ class Admin extends CI_Controller {
     ///http://getbootstrap.com/2.3.2/base-css.html#icons
     public function getMenu() {
         $menu = array();
-        array_push($menu, array("url" => "admin/inicioProveedor", "label" => "Inicio slider"));
+        array_push($menu, array("url" => "admin/servicio", "label" => "Servicio"));
+        array_push($menu, array("url" => "admin/quienesSomos", "label" => "Quienes Somos"));
+        array_push($menu, array("url" => "admin/contenido", "label" => "Contenido"));
+        array_push($menu, array("url" => "admin/contenidoSlider", "label" => "Contenido Slider"));
         return $menu;
     }
 
@@ -121,30 +124,106 @@ class Admin extends CI_Controller {
     //////////////////////////////////////////////////////
 
 
-    public function inicioProveedor(){
+    public function servicio(){
         $crud = new grocery_CRUD();
-        $crud->set_table("Proveedor");
-        $crud->set_subject('Proveedor');
+        $crud->set_table("servicio");
+        $crud->set_subject('Servicio');
 
-        $crud->display_as('nombre','Nombre de Proveedor');
-        /*$crud->display_as('foto','Imagen de Producto');*/ /*@Ady*/
-        $crud->display_as('idCategoria','Nombre de Categoría');
-        $crud->display_as('texto_descriptivo','Descripción');
-        $crud->display_as('link','Archivo');
+        $crud->display_as('nombre','Nombre de servicio');
+        $crud->display_as('descripcion','Descripción');
+        $crud->display_as('imagen','Imagen principal');
+        $crud->display_as('detalle','Detalle');
+        $crud->display_as('foto1','Imagen footer IZQ');
+        $crud->display_as('foto2','Imagen footer DER');
         $crud->display_as('fecha','Fecha');
         $crud->display_as('estado','Estado');
+        $crud->display_as('lista','Lista descripción');
 
-        $crud->columns('nombre', /*'foto',*/'idCategoria','texto_descriptivo','link', 'fecha', 'estado');
-        $crud->fields('nombre', /*'foto',*/'idCategoria','texto_descriptivo','link', 'fecha', 'estado');
-        $crud->required_fields('nombre', /*'foto',*/ 'idCategoria','texto_descriptivo', 'fecha', 'estado');
-        $crud->set_field_upload('link', 'assets/diversquim/docs');
-        
-        $crud->field_type('texto_descriptivo', 'text');
+        $crud->columns('nombre', 'descripcion', 'imagen', 'fecha', 'estado');
+        $crud->fields('nombre', 'descripcion', 'imagen', 'detalle', 'foto1', 'foto2','lista', 'fecha', 'estado');
+        $crud->required_fields('nombre', 'descripcion', 'imagen', 'detalle', 'fecha', 'estado');
+        $crud->set_field_upload('imagen', 'assets/neumos/servicio');
+        $crud->set_field_upload('foto1', 'assets/neumos/servicio');
+        $crud->set_field_upload('foto2', 'assets/neumos/servicio');
+
+        $crud->field_type('descripcion', 'text');
         $crud->field_type('estado', 'dropdown', array(
             '1' => 'Activo',
             '2' => 'Inactivo'
-        ));
-        $crud->set_relation('idCategoria', 'Categoria', 'nombre');
+            ));
+
+        $output = $crud->render();
+        $this->showPage($output);
+    }
+
+    public function quienesSomos(){
+        $crud = new grocery_CRUD();
+        $crud->set_table("quienessomos");
+        $crud->set_subject('Quienes Somos');
+
+        $crud->display_as('nombre','Atributo');
+        $crud->display_as('descripcion','Descripción');
+        $crud->display_as('imagen','Imagen');
+        $crud->display_as('estado','Estado');
+
+        $crud->columns('nombre', 'descripcion', 'fecha', 'estado');
+        $crud->fields('nombre', 'descripcion', 'imagen', 'fecha', 'estado');
+        $crud->required_fields('nombre', 'descripcion', 'fecha', 'estado');
+        $crud->set_field_upload('imagen', 'assets/neumos/quienessomos');
+
+        $crud->field_type('estado', 'dropdown', array(
+            '1' => 'Activo',
+            '2' => 'Inactivo'
+            ));
+
+        $output = $crud->render();
+        $this->showPage($output);
+    }
+
+    public function contenido(){
+        $crud = new grocery_CRUD();
+        $crud->set_table("contenido");
+        $crud->set_subject('Contenido');
+
+        $crud->display_as('nombre','Nombre');
+        $crud->display_as('descripcion','Descripción');
+        $crud->display_as('estado','Estado');
+
+        $crud->columns('nombre', 'descripcion', 'fecha', 'estado');
+        $crud->fields('nombre', 'descripcion', 'fecha', 'estado');
+        $crud->required_fields('nombre', 'fecha', 'estado');
+        $crud->set_field_upload('imagen', 'assets/neumos/contenido');
+
+        $crud->field_type('estado', 'dropdown', array(
+            '1' => 'Activo',
+            '2' => 'Inactivo'
+            ));
+
+        $output = $crud->render();
+        $this->showPage($output);
+    }
+
+    public function contenidoSlider(){
+        $crud = new grocery_CRUD();
+        $crud->set_table("contenidoslider");
+        $crud->set_subject('Contenido Slider');
+
+        $crud->display_as('imagen','Imagen');
+        $crud->display_as('descripcion','Descripción');
+        $crud->display_as('estado','Estado');
+        $crud->display_as('idcontenido','Contenido de origen');
+
+        $crud->columns('idcontenido', 'imagen', 'descripcion', 'fecha', 'estado');
+        $crud->fields('idcontenido', 'imagen', 'descripcion', 'fecha', 'estado');
+        $crud->required_fields('idcontenido', 'imagen', 'fecha', 'estado');
+        $crud->set_relation('idcontenido', 'contenido', 'nombre');
+        $crud->set_field_upload('imagen', 'assets/neumos/contenido');
+
+        $crud->field_type('estado', 'dropdown', array(
+            '1' => 'Activo',
+            '2' => 'Inactivo'
+            ));
+
         $output = $crud->render();
         $this->showPage($output);
     }

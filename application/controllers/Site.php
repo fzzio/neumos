@@ -30,10 +30,12 @@ class Site extends CI_Controller {
 
 		$dataTitle['titlePage'] = 'Inicio';
 		$dataContent['debug'] = $debug;
-		//$dataContent['sedes'] = $this->db->get_where('sede', array('estado' => 1))->result_array() ;
+		$dataContent['servicios'] = $dataMenu['servicios'] = $this->db->get_where('servicio', array('estado' => 1))->result_array() ;
+		$dataContent['neumolab'] = $this->db->get_where('contenido', array('id' => 1, 'estado' => 1))->row();
+		$dataContent['neumolabslider'] = $this->db->get_where('contenidoslider', array('idcontenido' => $dataContent['neumolab']->id, 'estado' => 1))->result_array();
 
 		$data['header'] = $this->load->view('neumolab/blocks/header', $dataTitle);
-		$data['menu'] = $this->load->view('neumolab/blocks/menu', array() );
+		$data['menu'] = $this->load->view('neumolab/blocks/menu', $dataMenu );
 		$data['content'] = $this->load->view('neumolab/templates/inicio', $dataContent);
 		$data['footer'] = $this->load->view('neumolab/blocks/footer', array());
 	}
@@ -44,9 +46,16 @@ class Site extends CI_Controller {
 
 		$dataTitle['titlePage'] = 'Quiénes Somos';
 		$dataContent['debug'] = $debug;
+		$dataMenu['servicios'] = $this->db->get_where('servicio', array('estado' => 1))->result_array() ;
+		
+		$dataContent['institucion'] = $this->db->get_where('quienessomos', array('id' => 1, 'estado' => 1))->row() ;
+		$dataContent['mision'] = $this->db->get_where('quienessomos', array('id' => 2, 'estado' => 1))->row() ;
+		$dataContent['vision'] = $this->db->get_where('quienessomos', array('id' => 3, 'estado' => 1))->row() ;
+		$dataContent['valores'] = $this->db->get_where('quienessomos', array('id' => 4, 'estado' => 1))->row() ;
+
 
 		$data['header'] = $this->load->view('neumolab/blocks/header', $dataTitle);
-		$data['menu'] = $this->load->view('neumolab/blocks/menu', array() );
+		$data['menu'] = $this->load->view('neumolab/blocks/menu', $dataMenu );
 		$data['content'] = $this->load->view('neumolab/templates/quienesSomos', $dataContent);
 		$data['footer'] = $this->load->view('neumolab/blocks/footer', array());
 	}
@@ -55,11 +64,15 @@ class Site extends CI_Controller {
 	{
 		$debug = false;
 
-		$dataTitle['titlePage'] = 'Información Pacientes';
 		$dataContent['debug'] = $debug;
+		$dataMenu['servicios'] = $this->db->get_where('servicio', array('estado' => 1))->result_array() ;
+
+		$dataContent['infoPaciente'] = $this->db->get_where('contenido', array('id' => 2, 'estado' => 1))->row();
+		$dataContent['infoPacienteSlider'] = $this->db->get_where('contenidoslider', array('idcontenido' => $dataContent['infoPaciente']->id, 'estado' => 1))->result_array();
+		$dataTitle['titlePage'] = $dataContent['infoPaciente']->nombre;
 
 		$data['header'] = $this->load->view('neumolab/blocks/header', $dataTitle);
-		$data['menu'] = $this->load->view('neumolab/blocks/menu', array() );
+		$data['menu'] = $this->load->view('neumolab/blocks/menu', $dataMenu );
 		$data['content'] = $this->load->view('neumolab/templates/infoPacientes', $dataContent);
 		$data['footer'] = $this->load->view('neumolab/blocks/footer', array());
 	}
@@ -68,11 +81,15 @@ class Site extends CI_Controller {
 	{
 		$debug = false;
 
-		$dataTitle['titlePage'] = 'Información Médicos';
 		$dataContent['debug'] = $debug;
+		$dataMenu['servicios'] = $this->db->get_where('servicio', array('estado' => 1))->result_array() ;
+
+		$dataContent['infoMedico'] = $this->db->get_where('contenido', array('id' => 3, 'estado' => 1))->row();
+		$dataContent['infoMedicoSlider'] = $this->db->get_where('contenidoslider', array('idcontenido' => $dataContent['infoMedico']->id, 'estado' => 1))->result_array();
+		$dataTitle['titlePage'] = $dataContent['infoMedico']->nombre;
 
 		$data['header'] = $this->load->view('neumolab/blocks/header', $dataTitle);
-		$data['menu'] = $this->load->view('neumolab/blocks/menu', array() );
+		$data['menu'] = $this->load->view('neumolab/blocks/menu', $dataMenu );
 		$data['content'] = $this->load->view('neumolab/templates/infoMedicos', $dataContent);
 		$data['footer'] = $this->load->view('neumolab/blocks/footer', array());
 	}
@@ -81,12 +98,35 @@ class Site extends CI_Controller {
 	{
 		$debug = false;
 
-		$dataTitle['titlePage'] = 'Servicios';
 		$dataContent['debug'] = $debug;
+		$dataMenu['servicios'] = $dataContent['servicios'] = $this->db->get_where('servicio', array('estado' => 1))->result_array() ;
+
+		$dataContent['infoServicio'] = $this->db->get_where('contenido', array('id' => 5, 'estado' => 1))->row();
+		$dataContent['infoServicioSlider'] = $this->db->get_where('contenidoslider', array('idcontenido' => $dataContent['infoServicio']->id, 'estado' => 1))->result_array();
+		$dataTitle['titlePage'] = $dataContent['infoServicio']->nombre;
+
 
 		$data['header'] = $this->load->view('neumolab/blocks/header', $dataTitle);
-		$data['menu'] = $this->load->view('neumolab/blocks/menu', array() );
+		$data['menu'] = $this->load->view('neumolab/blocks/menu', $dataMenu );
 		$data['content'] = $this->load->view('neumolab/templates/servicios', $dataContent);
+		$data['footer'] = $this->load->view('neumolab/blocks/footer', array());
+	}
+
+	public function servicioDetalle()
+	{
+		$debug = false;
+		$idServicio = $this->uri->segment(3);
+		$dataContent['servicio'] = $this->db->get_where('servicio', array('id' => $idServicio, 'estado' => 1))->row() ;
+		
+
+		$dataTitle['titlePage'] = $dataContent['servicio']->nombre;
+		$dataMenu['servicios'] = $this->db->get_where('servicio', array('estado' => 1))->result_array() ;
+		$dataContent['debug'] = $debug;
+
+
+		$data['header'] = $this->load->view('neumolab/blocks/header', $dataTitle);
+		$data['menu'] = $this->load->view('neumolab/blocks/menu', $dataMenu );
+		$data['content'] = $this->load->view('neumolab/templates/servicioDetalle', $dataContent);
 		$data['footer'] = $this->load->view('neumolab/blocks/footer', array());
 	}
 
@@ -96,9 +136,10 @@ class Site extends CI_Controller {
 
 		$dataTitle['titlePage'] = 'Galeria';
 		$dataContent['debug'] = $debug;
+		$dataMenu['servicios'] = $this->db->get_where('servicio', array('estado' => 1))->result_array() ;
 
 		$data['header'] = $this->load->view('neumolab/blocks/header', $dataTitle);
-		$data['menu'] = $this->load->view('neumolab/blocks/menu', array() );
+		$data['menu'] = $this->load->view('neumolab/blocks/menu', $dataMenu );
 		$data['content'] = $this->load->view('neumolab/templates/galeria', $dataContent);
 		$data['footer'] = $this->load->view('neumolab/blocks/footer', array());
 	}
@@ -109,9 +150,10 @@ class Site extends CI_Controller {
 
 		$dataTitle['titlePage'] = 'Noticias';
 		$dataContent['debug'] = $debug;
+		$dataMenu['servicios'] = $this->db->get_where('servicio', array('estado' => 1))->result_array() ;
 
 		$data['header'] = $this->load->view('neumolab/blocks/header', $dataTitle);
-		$data['menu'] = $this->load->view('neumolab/blocks/menu', array() );
+		$data['menu'] = $this->load->view('neumolab/blocks/menu', $dataMenu );
 		$data['content'] = $this->load->view('neumolab/templates/noticias', $dataContent);
 		$data['footer'] = $this->load->view('neumolab/blocks/footer', array());
 	}
@@ -120,77 +162,16 @@ class Site extends CI_Controller {
 	{
 		$debug = false;
 
-		$dataTitle['titlePage'] = 'Contáctenos';
 		$dataContent['debug'] = $debug;
+		$dataMenu['servicios'] = $this->db->get_where('servicio', array('estado' => 1))->result_array() ;
+
+		$dataContent['infoContacto'] = $this->db->get_where('contenido', array('id' => 4, 'estado' => 1))->row();
+		$dataContent['infoContactoSlider'] = $this->db->get_where('contenidoslider', array('idcontenido' => $dataContent['infoContacto']->id, 'estado' => 1))->result_array();
+		$dataTitle['titlePage'] = $dataContent['infoContacto']->nombre;
 
 		$data['header'] = $this->load->view('neumolab/blocks/header', $dataTitle);
-		$data['menu'] = $this->load->view('neumolab/blocks/menu', array() );
+		$data['menu'] = $this->load->view('neumolab/blocks/menu', $dataMenu );
 		$data['content'] = $this->load->view('neumolab/templates/contacto', $dataContent);
-		$data['footer'] = $this->load->view('neumolab/blocks/footer', array());
-	}
-
-	public function consultas()
-	{
-		$debug = false;
-
-		$dataTitle['titlePage'] = 'Consultas';
-		$dataContent['debug'] = $debug;
-
-		$data['header'] = $this->load->view('neumolab/blocks/header', $dataTitle);
-		$data['menu'] = $this->load->view('neumolab/blocks/menu', array() );
-		$data['content'] = $this->load->view('neumolab/templates/consultas', $dataContent);
-		$data['footer'] = $this->load->view('neumolab/blocks/footer', array());
-	}
-
-	public function pulmonar()
-	{
-		$debug = false;
-
-		$dataTitle['titlePage'] = 'Pruebas de Función Pulmonar';
-		$dataContent['debug'] = $debug;
-
-		$data['header'] = $this->load->view('neumolab/blocks/header', $dataTitle);
-		$data['menu'] = $this->load->view('neumolab/blocks/menu', array() );
-		$data['content'] = $this->load->view('neumolab/templates/pulmonar', $dataContent);
-		$data['footer'] = $this->load->view('neumolab/blocks/footer', array());
-	}
-
-	public function suenio()
-	{
-		$debug = false;
-
-		$dataTitle['titlePage'] = 'Estudios de Sueño';
-		$dataContent['debug'] = $debug;
-
-		$data['header'] = $this->load->view('neumolab/blocks/header', $dataTitle);
-		$data['menu'] = $this->load->view('neumolab/blocks/menu', array() );
-		$data['content'] = $this->load->view('neumolab/templates/suenio', $dataContent);
-		$data['footer'] = $this->load->view('neumolab/blocks/footer', array());
-	}
-
-	public function respiratorio()
-	{
-		$debug = false;
-
-		$dataTitle['titlePage'] = 'Terapia y Cuidado Respiratorio';
-		$dataContent['debug'] = $debug;
-
-		$data['header'] = $this->load->view('neumolab/blocks/header', $dataTitle);
-		$data['menu'] = $this->load->view('neumolab/blocks/menu', array() );
-		$data['content'] = $this->load->view('neumolab/templates/respiratorio', $dataContent);
-		$data['footer'] = $this->load->view('neumolab/blocks/footer', array());
-	}
-
-	public function especiales()
-	{
-		$debug = false;
-
-		$dataTitle['titlePage'] = 'Programas Especiales';
-		$dataContent['debug'] = $debug;
-
-		$data['header'] = $this->load->view('neumolab/blocks/header', $dataTitle);
-		$data['menu'] = $this->load->view('neumolab/blocks/menu', array() );
-		$data['content'] = $this->load->view('neumolab/templates/especiales', $dataContent);
 		$data['footer'] = $this->load->view('neumolab/blocks/footer', array());
 	}
 	

@@ -1,23 +1,15 @@
 <section class="container-fluid">
 	<div class="row">
 		<div id="carousel-contacto" class="carousel slide carousel-completo" data-ride="carousel">
-			<?php /*
-
-			<!-- Indicators -->
-			<ol class="carousel-indicators">
-				<li data-target="#carousel-contacto" data-slide-to="0" class="active"></li>
-				<li data-target="#carousel-contacto" data-slide-to="1"></li>
-				<li data-target="#carousel-contacto" data-slide-to="2"></li>
-			</ol>
-
-			*/ ?>
- 			
 
 			<!-- Wrapper for slides -->
 			<div class="carousel-inner" role="listbox">
-				<div class="item active">
-					<img src="<?php echo base_url('public/images/somos.jpg'); ?>" alt="" class="img-responsive">
-				</div>
+				<?php foreach ($infoContactoSlider as $slide): ?>
+					<div class="item">
+						<?php $rutaImgContenido = 'assets/neumos/contenido/' . $slide["imagen"] ; ?>
+						<img src="<?php echo base_url($rutaImgContenido); ?>" title="" alt="<?php echo $slide['descripcion']; ?>" class="img-responsive obj-centrar" />
+					</div>	
+				<?php endforeach ?>
 			</div>
 
 			<?php /*
@@ -38,12 +30,14 @@
 
 <section class="container-fluid fondo-blanco">
 	<div class="row espaciado-3">
-		<h1 class="text-center titulo-acceso txt-naranja txt-mayus">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+		<h1 class="text-center titulo-acceso txt-naranja txt-mayus">
+			<?php echo $infoContacto->nombre; ?>
+		</h1>
 		<div class="col-md-2">&nbsp;</div>
 		<div class="col-md-8 col-sm-8 text-center">
-			<p class="text-center txt-azul-marino parrafo-acceso">
-				Praesent feugiat quam in lobortis auctor. Pellentesque sodales molestie tortor, a porta nunc iaculis in. Donec id vestibulum justo. Proin eu ante commodo, scelerisque est vel, ullamcorper nunc. Sed euismod cursus porttitor. Donec quis risus fringilla, vehicula felis id, facilisis neque. Nam fringilla at erat vitae pellentesque. Donec malesuada orci sed justo placerat hendrerit. Ut porttitor ipsum nunc, et tempor augue maximus quis. Quisque ultricies dictum semper.
-			</p>
+			<div class="text-center txt-azul-marino parrafo-acceso">
+				<?php echo $infoContacto->descripcion; ?>
+			</div>
 		</div>
 		<div class="col-md-2">&nbsp;</div>
 	</div>

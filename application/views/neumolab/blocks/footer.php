@@ -35,29 +35,19 @@
 					<div class="col-md-4 text-center"> 
 						<ul class="delfooter foo-menu">
 							<li>
-								<a href="<?php echo base_url('index.php/site/inicio'); ?>">
-									<strong>Inicio</strong>
-								</a>
+								<?php echo anchor('site/index', "Inicio" , array('class' => 'txt-bold') ); ?>
 							</li>
 							<li>
-								<a href="<?php echo base_url('index.php/site/servicios'); ?>">
-									<strong>Servicios</strong>
-								</a>
+								<?php echo anchor('site/servicios', "Servicios" , array('class' => 'txt-bold') ); ?>
 							</li>
 							<li>
-								<a href="<?php echo base_url('index.php/site/galeria'); ?>">
-									<strong>Galeria</strong>
-								</a>
+								<?php echo anchor('site/galeria', "Galería" , array('class' => 'txt-bold') ); ?>
 							</li>
 							<li>
-								<a href="<?php echo base_url('index.php/site/noticias'); ?>">
-									<strong>Noticias</strong>
-								</a>
+								<?php echo anchor('site/noticias', "Noticias" , array('class' => 'txt-bold') ); ?>
 							</li>
 							<li>
-								<a href="<?php echo base_url('index.php/site/contacto'); ?>">
-									<strong>Contáctenos</strong>
-								</a>
+								<?php echo anchor('site/contacto', "Contáctenos" , array('class' => 'txt-bold') ); ?>
 							</li>
 						</ul>
 					</div>

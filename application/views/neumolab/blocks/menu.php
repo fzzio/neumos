@@ -49,7 +49,7 @@
 									<img src="<?php echo base_url('public/images/tw.png'); ?>" title="" alt="" class="img-responsive img-icono-top" />
 								</a>
 							</li>
-							<li>
+							<li class="hidden">
 								<a href="#" target="_blank">
 									<img src="<?php echo base_url('public/images/buscar.png'); ?>" title="" alt="" class="img-responsive img-icono-top" />
 								</a>
@@ -111,21 +111,11 @@
 			</div>
 			<div class="collapse navbar-collapse" id="navbar-inferior">
 				<ul class="nav navbar-nav">
-					<li>
-						<?php echo anchor('site/consultas', 'Consultas'); ?>
-					</li>
-					<li>
-						<?php echo anchor('site/pulmonar', 'Pruebas de Función Pulmonar'); ?>
-					</li>
-					<li>
-						<?php echo anchor('site/suenio', 'Estudios de Sueño'); ?>
-					</li>
-					<li>
-						<?php echo anchor('site/respiratorio', 'Terapia y Cuidado Respiratorio'); ?>
-					</li>
-					<li>
-						<?php echo anchor('site/especiales', 'Programas Especiales'); ?>
-					</li>
+					<?php foreach ($servicios as $servicio): ?>
+						<li>
+							<?php echo anchor('site/servicioDetalle/' . $servicio['id'], $servicio['nombre'] , array('class' => '') ); ?>
+						</li>
+					<?php endforeach ?>
 				</ul>
 			</div>
 		</div>

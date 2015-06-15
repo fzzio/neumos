@@ -1,23 +1,15 @@
 <section class="container-fluid">
 	<div class="row">
 		<div id="carousel-somos" class="carousel slide carousel-completo" data-ride="carousel">
-			<?php /*
-
-			<!-- Indicators -->
-			<ol class="carousel-indicators">
-				<li data-target="#carousel-somos" data-slide-to="0" class="active"></li>
-				<li data-target="#carousel-somos" data-slide-to="1"></li>
-				<li data-target="#carousel-somos" data-slide-to="2"></li>
-			</ol>
-
-			*/ ?>
- 			
 
 			<!-- Wrapper for slides -->
 			<div class="carousel-inner" role="listbox">
-				<div class="item active">
-					<img src="<?php echo base_url('public/images/somos.jpg'); ?>" alt="" class="img-responsive">
-				</div>
+			<?php foreach ($infoMedicoSlider as $slide): ?>
+					<div class="item">
+						<?php $rutaImgContenido = 'assets/neumos/contenido/' . $slide["imagen"] ; ?>
+						<img src="<?php echo base_url($rutaImgContenido); ?>" title="" alt="<?php echo $slide['descripcion']; ?>" class="img-responsive obj-centrar" />
+					</div>	
+				<?php endforeach ?>
 			</div>
 
 			<?php /*
@@ -61,11 +53,12 @@
 			</ul>
 		</div>
 		<div class="col-md-6">
-			<h2 class="txt-naranja txt-bold text-center">Información Para Médicos</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,aliquip ex ea commodo consequat.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,aliquip ex ea commodo consequat.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,aliquip ex ea commodo consequat.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,aliquip ex ea commodo consequat.</p>
+			<h2 class="txt-naranja txt-bold text-center">
+				<?php echo $infoMedico->nombre; ?>
+			</h2>
+			<div class="txt-azul-marino">
+				<?php echo $infoMedico->descripcion; ?>
+			</div>
 		</div>
 	</div>
 </section>
