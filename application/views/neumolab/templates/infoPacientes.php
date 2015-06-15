@@ -36,21 +36,14 @@
 				Información General
 			</h2>
 			<ul class="sin-lista">
-				<li>
-					<a href="" class="link txt-blanco">
-						Cómo hacer citas?
-					</a>
-				</li>
-				<li>
-					<a href="" class="link txt-blanco">
-						Preparación para los exámenes
-					</a>
-				</li>
-				<li>
-					<a href="" class="link txt-blanco">
-						Cómo Prevenir Enfermedades
-					</a>
-				</li>
+				<?php foreach ($infoPacienteDetalles as $info): ?>
+					<li>
+						<?php /* <a href="#info-<?php echo $info['id']; ?>" class="link txt-blanco"> */ ?>
+						<a href="" class="link txt-blanco">
+							<?php echo $info['nombre'] ?>
+						</a>
+					</li>
+				<?php endforeach ?>
 			</ul>
 		</div>
 		<div class="col-md-6">
@@ -66,150 +59,201 @@
 
 
 <section class="container-fluid">
-	<div class="row espaciado-3 fondo-azul-marino">
-		<h1 class="text-center titulo-acceso txt-naranja">Convenios</h1>
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					<div class="col-md-3 txt-blanco">
-						<ul>
-							<li>LoremIpsum</li>
-							<li>LoremIpsum</li>
-							<li>LoremIpsum</li>
-							<li>LoremIpsum</li>
-						</ul>
-					</div>
-					<div class="col-md-3 txt-blanco">
-						<ul>
-							<li>LoremIpsum</li>
-							<li>LoremIpsum</li>
-							<li>LoremIpsum</li>
-							<li>LoremIpsum</li>
-						</ul>
-					</div>
-					<div class="col-md-3 txt-blanco">
-						<ul>
-							<li>LoremIpsum</li>
-							<li>LoremIpsum</li>
-							<li>LoremIpsum</li>
-							<li>LoremIpsum</li>
-						</ul>
-					</div>
-					<div class="col-md-3 txt-blanco">
-						<ul>
-							<li>LoremIpsum</li>
-							<li>LoremIpsum</li>
-							<li>LoremIpsum</li>
-							<li>LoremIpsum</li>
-						</ul>
+	<?php 
+		$itemInfo = 1;
+		$claseFondo = "";
+		$claseTexto = "";
+		$claseTitular = "";
+	?>
+	<?php foreach ($infoPacienteDetalles as $info): ?>
+		<?php
+			if ($itemInfo == 1) {
+				$claseFondo = "fondo-azul-marino";
+				$claseTitular = "txt-naranja";
+				$claseTexto = "txt-blanco";
+			}elseif ($itemInfo == 2) {
+				$claseFondo = "fondo-blanco";
+				$claseTitular = "txt-naranja";
+				$claseTexto = "txt-azul-marino";
+			}elseif ($itemInfo == 3) {
+				$claseFondo = "fondo-naranja-claro";
+				$claseTitular = "txt-blanco";
+				$claseTexto = "txt-blanco";
+			}elseif ($itemInfo == 4) {
+				$claseFondo = "fondo-blanco";
+				$claseTitular = "txt-naranja";
+				$claseTexto = "txt-azul-marino";
+			}elseif ($itemInfo == 5) {
+				$claseFondo = "fondo-azul-marino";
+				$claseTitular = "txt-blanco";
+				$claseTexto = "txt-blanco";
+
+				$itemInfo = 1;
+			}
+		?>
+
+		<div id="info-<?php echo $info['id']; ?>" class="row espaciado-3 <?php echo $claseFondo; ?>">
+			<h1 class="text-center titulo-acceso <?php echo $claseTitular; ?>"><?php echo $info["nombre"]; ?></h1>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 <?php echo $claseTexto; ?>">
+						<?php echo $info["descripcion"]; ?>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<div class="row espaciado-3 fondo-blanco">
-		<h1 class="text-center titulo-acceso txt-naranja">Cómo hacer citas</h1>
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					<div class="col-md-6 txt-azul-marino">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,aliquip ex ea commodo consequat.</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,aliquip ex ea commodo consequat.</p>
-					</div>
-					<div class="col-md-6 txt-azul-marino">
-						<ul>
-							<li>LoremIpsum</li>
-							<li>LoremIpsum</li>
-							<li>LoremIpsum</li>
-							<li>LoremIpsum</li>
-						</ul>
+
+		<?php $itemInfo++; ?>
+	<?php endforeach ?>
+
+	<?php /*
+
+		<div class="row espaciado-3 fondo-azul-marino">
+			<h1 class="text-center titulo-acceso txt-naranja">Convenios</h1>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2">
+						<div class="col-md-3 txt-blanco">
+							<ul>
+								<li>LoremIpsum</li>
+								<li>LoremIpsum</li>
+								<li>LoremIpsum</li>
+								<li>LoremIpsum</li>
+							</ul>
+						</div>
+						<div class="col-md-3 txt-blanco">
+							<ul>
+								<li>LoremIpsum</li>
+								<li>LoremIpsum</li>
+								<li>LoremIpsum</li>
+								<li>LoremIpsum</li>
+							</ul>
+						</div>
+						<div class="col-md-3 txt-blanco">
+							<ul>
+								<li>LoremIpsum</li>
+								<li>LoremIpsum</li>
+								<li>LoremIpsum</li>
+								<li>LoremIpsum</li>
+							</ul>
+						</div>
+						<div class="col-md-3 txt-blanco">
+							<ul>
+								<li>LoremIpsum</li>
+								<li>LoremIpsum</li>
+								<li>LoremIpsum</li>
+								<li>LoremIpsum</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<div class="row espaciado-3 fondo-naranja-claro">
-		<h1 class="text-center titulo-acceso txt-blanco">Preparación para exámenes</h1>
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					<div class="col-md-6 txt-blanco">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,aliquip ex ea commodo consequat.</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,aliquip ex ea commodo consequat.</p>
-					</div>
-					<div class="col-md-6 txt-blanco">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,aliquip ex ea commodo consequat.</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,aliquip ex ea commodo consequat.</p>
+		<div class="row espaciado-3 fondo-blanco">
+			<h1 class="text-center titulo-acceso txt-naranja">Cómo hacer citas</h1>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2">
+						<div class="col-md-6 txt-azul-marino">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,aliquip ex ea commodo consequat.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,aliquip ex ea commodo consequat.</p>
+						</div>
+						<div class="col-md-6 txt-azul-marino">
+							<ul>
+								<li>LoremIpsum</li>
+								<li>LoremIpsum</li>
+								<li>LoremIpsum</li>
+								<li>LoremIpsum</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	
 
-	<div class="row espaciado-3 fondo-blanco">
-		<h1 class="text-center titulo-acceso txt-naranja">Cómo prevenir enfermedades</h1>
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					<div class="col-md-3 txt-azul-marino">
-						<ul>
-							<li>LoremIpsum</li>
-							<li>LoremIpsum</li>
-							<li>LoremIpsum</li>
-							<li>LoremIpsum</li>
-						</ul>
-					</div>
-					<div class="col-md-3 txt-azul-marino">
-						<ul>
-							<li>LoremIpsum</li>
-							<li>LoremIpsum</li>
-							<li>LoremIpsum</li>
-							<li>LoremIpsum</li>
-						</ul>
-					</div>
-					<div class="col-md-3 txt-azul-marino">
-						<ul>
-							<li>LoremIpsum</li>
-							<li>LoremIpsum</li>
-							<li>LoremIpsum</li>
-							<li>LoremIpsum</li>
-						</ul>
-					</div>
-					<div class="col-md-3 txt-azul-marino">
-						<ul>
-							<li>LoremIpsum</li>
-							<li>LoremIpsum</li>
-							<li>LoremIpsum</li>
-							<li>LoremIpsum</li>
-						</ul>
+		<div class="row espaciado-3 fondo-naranja-claro">
+			<h1 class="text-center titulo-acceso txt-blanco">Preparación para exámenes</h1>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2">
+						<div class="col-md-6 txt-blanco">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,aliquip ex ea commodo consequat.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,aliquip ex ea commodo consequat.</p>
+						</div>
+						<div class="col-md-6 txt-blanco">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,aliquip ex ea commodo consequat.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,aliquip ex ea commodo consequat.</p>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+		
 
-
-	<div class="row espaciado-3 fondo-azul-marino">
-		<h1 class="text-center titulo-acceso txt-blanco">Deberes y derechos del paciente</h1>
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					<div class="col-md-6 txt-blanco">
-						<h3>Deberes</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,aliquip ex ea commodo consequat.</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,aliquip ex ea commodo consequat.</p>
-					</div>
-					<div class="col-md-6 txt-blanco">
-						<h3>Derechos</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,aliquip ex ea commodo consequat.</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,aliquip ex ea commodo consequat.</p>
+		<div class="row espaciado-3 fondo-blanco">
+			<h1 class="text-center titulo-acceso txt-naranja">Cómo prevenir enfermedades</h1>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2">
+						<div class="col-md-3 txt-azul-marino">
+							<ul>
+								<li>LoremIpsum</li>
+								<li>LoremIpsum</li>
+								<li>LoremIpsum</li>
+								<li>LoremIpsum</li>
+							</ul>
+						</div>
+						<div class="col-md-3 txt-azul-marino">
+							<ul>
+								<li>LoremIpsum</li>
+								<li>LoremIpsum</li>
+								<li>LoremIpsum</li>
+								<li>LoremIpsum</li>
+							</ul>
+						</div>
+						<div class="col-md-3 txt-azul-marino">
+							<ul>
+								<li>LoremIpsum</li>
+								<li>LoremIpsum</li>
+								<li>LoremIpsum</li>
+								<li>LoremIpsum</li>
+							</ul>
+						</div>
+						<div class="col-md-3 txt-azul-marino">
+							<ul>
+								<li>LoremIpsum</li>
+								<li>LoremIpsum</li>
+								<li>LoremIpsum</li>
+								<li>LoremIpsum</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	
+
+
+		<div class="row espaciado-3 fondo-azul-marino">
+			<h1 class="text-center titulo-acceso txt-blanco">Deberes y derechos del paciente</h1>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2">
+						<div class="col-md-6 txt-blanco">
+							<h3>Deberes</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,aliquip ex ea commodo consequat.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,aliquip ex ea commodo consequat.</p>
+						</div>
+						<div class="col-md-6 txt-blanco">
+							<h3>Derechos</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,aliquip ex ea commodo consequat.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,aliquip ex ea commodo consequat.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	*/ ?>
 </section>

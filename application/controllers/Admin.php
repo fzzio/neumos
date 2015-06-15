@@ -21,6 +21,7 @@ class Admin extends CI_Controller {
         array_push($menu, array("url" => "admin/quienesSomos", "label" => "Quienes Somos"));
         array_push($menu, array("url" => "admin/contenido", "label" => "Contenido"));
         array_push($menu, array("url" => "admin/contenidoSlider", "label" => "Contenido Slider"));
+        array_push($menu, array("url" => "admin/contenidoDetalle", "label" => "Contenido Detalle"));
         return $menu;
     }
 
@@ -218,6 +219,32 @@ class Admin extends CI_Controller {
         $crud->required_fields('idcontenido', 'imagen', 'fecha', 'estado');
         $crud->set_relation('idcontenido', 'contenido', 'nombre');
         $crud->set_field_upload('imagen', 'assets/neumos/contenido');
+
+        $crud->field_type('estado', 'dropdown', array(
+            '1' => 'Activo',
+            '2' => 'Inactivo'
+            ));
+
+        $output = $crud->render();
+        $this->showPage($output);
+    }
+
+    public function contenidoDetalle(){
+        $crud = new grocery_CRUD();
+        $crud->set_table("contenidodetalle");
+        $crud->set_subject('Contenido Detalle');
+
+        $crud->display_as('nombre','Nombre');
+        $crud->display_as('descripcion','Descripción');
+        $crud->display_as('estado','Estado');
+        $crud->display_as('idcontenido','Contenido de origen');
+
+        $crud->columns('idcontenido', 'nombre', 'descripcion', 'fecha', 'estado');
+        $crud->fields('idcontenido', 'nombre', 'descripcion', 'fecha', 'estado');
+        $crud->required_fields('idcontenido', 'nombre', 'fecha', 'estado');
+        $crud->set_relation('idcontenido', 'contenido', 'nombre');
+        
+        $crud->field_type('descripcion', 'text'); 
 
         $crud->field_type('estado', 'dropdown', array(
             '1' => 'Activo',

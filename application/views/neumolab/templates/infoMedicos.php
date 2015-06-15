@@ -35,21 +35,14 @@
 				Información General
 			</h2>
 			<ul class="sin-lista">
-				<li>
-					<a href="" class="link txt-blanco">
-						Guías de atención
-					</a>
-				</li>
-				<li>
-					<a href="" class="link txt-blanco">
-						Casos de estudio
-					</a>
-				</li>
-				<li>
-					<a href="" class="link txt-blanco">
-						Programas especiales
-					</a>
-				</li>
+				<?php foreach ($infoMedicoDetalles as $info): ?>
+					<li>
+						<?php /* <a href="#info-<?php echo $info['id']; ?>" class="link txt-blanco"> */ ?>
+						<a href="" class="link txt-blanco">
+							<?php echo $info['nombre'] ?>
+						</a>
+					</li>
+				<?php endforeach ?>
 			</ul>
 		</div>
 		<div class="col-md-6">
@@ -65,6 +58,59 @@
 
 
 <section class="container-fluid">
+	<?php 
+		$itemInfo = 1;
+		$claseFondo = "";
+		$claseTexto = "";
+		$claseTitular = "";
+	?>
+	<?php foreach ($infoMedicoDetalles as $info): ?>
+		<?php
+			if ($itemInfo == 1) {
+				$claseFondo = "fondo-azul-marino";
+				$claseTitular = "txt-naranja";
+				$claseTexto = "txt-blanco";
+			}elseif ($itemInfo == 2) {
+				$claseFondo = "fondo-blanco";
+				$claseTitular = "txt-naranja";
+				$claseTexto = "txt-azul-marino";
+			}elseif ($itemInfo == 3) {
+				$claseFondo = "fondo-naranja-claro";
+				$claseTitular = "txt-blanco";
+				$claseTexto = "txt-blanco";
+			}elseif ($itemInfo == 4) {
+				$claseFondo = "fondo-blanco";
+				$claseTitular = "txt-naranja";
+				$claseTexto = "txt-azul-marino";
+			}elseif ($itemInfo == 5) {
+				$claseFondo = "fondo-azul-marino";
+				$claseTitular = "txt-blanco";
+				$claseTexto = "txt-blanco";
+
+				$itemInfo = 1;
+			}
+		?>
+
+		<div id="info-<?php echo $info['id']; ?>" class="row espaciado-3 <?php echo $claseFondo; ?>">
+			<h1 class="text-center titulo-acceso <?php echo $claseTitular; ?>"><?php echo $info["nombre"]; ?></h1>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 <?php echo $claseTexto; ?>">
+						<?php echo $info["descripcion"]; ?>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<?php $itemInfo++; ?>
+	<?php endforeach ?>
+
+	<?php 
+	/*
+
+
+
 	<div class="row espaciado-3 fondo-azul-marino">
 		<h1 class="text-center titulo-acceso txt-naranja">Convenios vigentes</h1>
 		<div class="container-fluid">
@@ -208,5 +254,6 @@
 			</div>
 		</div>
 	</div>
-	
+	*/
+	?>
 </section>

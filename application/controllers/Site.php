@@ -69,6 +69,7 @@ class Site extends CI_Controller {
 
 		$dataContent['infoPaciente'] = $this->db->get_where('contenido', array('id' => 2, 'estado' => 1))->row();
 		$dataContent['infoPacienteSlider'] = $this->db->get_where('contenidoslider', array('idcontenido' => $dataContent['infoPaciente']->id, 'estado' => 1))->result_array();
+		$dataContent['infoPacienteDetalles'] = $this->db->get_where('contenidodetalle', array('idcontenido' => $dataContent['infoPaciente']->id, 'estado' => 1))->result_array();
 		$dataTitle['titlePage'] = $dataContent['infoPaciente']->nombre;
 
 		$data['header'] = $this->load->view('neumolab/blocks/header', $dataTitle);
@@ -86,6 +87,7 @@ class Site extends CI_Controller {
 
 		$dataContent['infoMedico'] = $this->db->get_where('contenido', array('id' => 3, 'estado' => 1))->row();
 		$dataContent['infoMedicoSlider'] = $this->db->get_where('contenidoslider', array('idcontenido' => $dataContent['infoMedico']->id, 'estado' => 1))->result_array();
+		$dataContent['infoMedicoDetalles'] = $this->db->get_where('contenidodetalle', array('idcontenido' => $dataContent['infoMedico']->id, 'estado' => 1))->result_array();
 		$dataTitle['titlePage'] = $dataContent['infoMedico']->nombre;
 
 		$data['header'] = $this->load->view('neumolab/blocks/header', $dataTitle);
